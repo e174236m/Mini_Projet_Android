@@ -16,6 +16,7 @@ public class Accueil extends AppCompatActivity {
 
         final Button btISport = findViewById(R.id.btISport);
         final Button btVTransport = findViewById(R.id.btVTransport);
+        final Button btFavories = findViewById(R.id.btFavories);
 
         btISport.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,6 +39,18 @@ public class Accueil extends AppCompatActivity {
 
             }
         });
+
+        btFavories.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent rq = new Intent(Accueil.this, Favorie.class);
+                startActivity(rq);
+
+            }
+        });
+
+
 
 
     }

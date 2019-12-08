@@ -1,9 +1,22 @@
 package com.example.miniprojetandroid;
 
-public class VoyagesTransports_Bean extends Favories_Bean {
+import java.io.Serializable;
+import java.util.Comparator;
 
-    public VoyagesTransports_Bean(String nom, String description){
-        super(nom, description);
+public class VoyagesTransports_Bean extends Favories_Bean implements Serializable {
+
+    private String image;
+
+    public VoyagesTransports_Bean(String id, String nom, String description, String lieu, String latitudeGPS, String longitudeGPS, String image){
+        super(id, nom, description, lieu, latitudeGPS, longitudeGPS);
+        this.image = image;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 }

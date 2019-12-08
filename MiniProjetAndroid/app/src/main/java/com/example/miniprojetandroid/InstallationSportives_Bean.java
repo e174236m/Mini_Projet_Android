@@ -1,27 +1,11 @@
 package com.example.miniprojetandroid;
 
-import java.util.Comparator;
+import java.io.Serializable;
 
-public class InstallationSportives_Bean extends Favories_Bean {
+public class InstallationSportives_Bean extends Favories_Bean implements Serializable {
 
-    private String commune;
-    private String coordonneesGPS;
-
-    public InstallationSportives_Bean(String nom, String description, String commune, String coordonneesGPS){
-        super(nom, description);
-        this.commune = commune;
-        this.coordonneesGPS = coordonneesGPS;
+    public InstallationSportives_Bean(String id, String nom, String description, String lieu, String latitudeGPS, String longitudeGPS){
+        super(id, nom, description, lieu, latitudeGPS, longitudeGPS);
     }
 
-    @Override
-    public String toString() {
-        return nom + " (" + commune + ")";
-    }
-
-    public static Comparator<InstallationSportives_Bean> TRI_PAR_COMMUNE = new Comparator<InstallationSportives_Bean>() {
-        @Override
-        public int compare(InstallationSportives_Bean o1, InstallationSportives_Bean o2) {
-            return String.CASE_INSENSITIVE_ORDER.compare(o1.commune, o2.commune);
-        }
-    };
 }
